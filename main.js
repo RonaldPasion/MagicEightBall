@@ -1,39 +1,19 @@
-const userName = 'Bob';
+function shakeMagicEightball(userName, userQuestion)
+{
+  const eightBallOutput = [
+  'it is certain.',
+  'it is decidedly so.',
+  'reply hazy try again.',
+  'cannot predict now.',
+  'do not count on it.',
+  'my sources say no.',
+  'outlook not so good.',
+  'signs point to yes.'
+  ];
+  const randomIndex = Math.floor(Math.random() * 8);
 
-userName ? console.log(`Hello, ${userName}!`): console.log('Hello!');
-
-const userQuestion = 'Is it going to rain today?';
-
-userName ? console.log(`${userName} asked, ${userQuestion}`): console.log(`You asked, ${userQuestion}`);
-
-const randomNumber = Math.floor(Math.random() * 8);
-let eightBall = '';
-
-switch (randomNumber) {
-  case 0:
-    eightBall = 'It is certain';
-    break;
-  case 1:
-    eightBall = 'It is decidedly so';
-    break;
-  case 2:
-    eightBall = 'Reply hazy, try again';
-    break;
-  case 3:
-    eightBall = 'Cannot predict now';
-    break;
-  case 4:
-    eightBall = 'Do not count on it';
-    break;
-  case 5:
-    eightBall = 'My sources say no';
-    break;
-  case 6:
-    eightBall = 'Outlook not so good';
-    break;
-  case 7:
-    eightBall = 'Signs point to yes';
-    break;
+  console.log(`Hello ${userName}. You asked, ${userQuestion.toLowerCase()}`);
+  console.log(`Magic eight ball says ${eightBallOutput[randomIndex]}`);
 }
 
-console.log(eightBall);
+shakeMagicEightball('Bob', 'Will it rain today?');
